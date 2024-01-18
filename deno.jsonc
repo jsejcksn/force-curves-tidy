@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"exactOptionalPropertyTypes": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noUncheckedIndexedAccess": true,
+		"useUnknownInCatchVariables": true
+	},
+	"tasks": {
+		"check": "biome check src && deno lint src && deno task check:types",
+		"check:apply": "biome check --apply src && deno lint src && deno task check:types",
+		"check:format": "biome format src",
+		"check:lint": "biome lint src && deno lint src",
+		"check:types": "deno check src/main.ts",
+		"format": "biome format --write src",
+		"lint": "biome lint --apply src && deno lint src",
+		"start": "deno run --allow-read=. --allow-write=data src/main.ts",
+		"test": "deno test src"
+	}
+}
